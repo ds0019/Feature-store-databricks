@@ -26,8 +26,8 @@ vantaggio del riuso delle feature.
 | `notebooks/Notebook03-GoldFeatureTables.py` | Tabella delle zone e Feature Table `gold.fs_zona_anagrafica`, `gold.fs_zona_giornaliera`, `gold.fs_zona_oraria` | 4.3 |
 | `notebooks/Notebook04-TrainingSet.py` | Etichette, join point-in-time, verifiche, prova del leakage, salvataggio del training set | 4.4, 5.3 |
 | `notebooks/Notebook05-Benchmark.py` | Confronto tra i formati, letture a freddo, generazione del training set con e senza Feature Store | 5.2, 5.3 |
-| `job/Job_Medallion_FeatureStore.yml` | Job con i tre layer: NB01 → NB02 → NB03 | 4.1 |
-| `job/Tesi_InteraPipeline.yaml` | Job che esegue il job precedente, poi NB04 e NB05 | — |
+| `jobs/Job_Medallion_FeatureStore.yml` | Job con i tre layer: NB01 → NB02 → NB03 | 4.1 |
+| `jobs/Tesi_InteraPipeline.yaml` | Job che esegue il job precedente, poi NB04 e NB05 | — |
 
 ## Requisiti
 
