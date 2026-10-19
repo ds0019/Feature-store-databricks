@@ -1,0 +1,24 @@
+resources:
+  jobs:
+    Tesi_InteraPipeline:
+      name: Tesi_InteraPipeline
+      tasks:
+        - task_key: MedallionJob
+          run_job_task:
+            job_id: 539342017522650
+        - task_key: TrainingNotebook
+          depends_on:
+            - task_key: MedallionJob
+          notebook_task:
+            notebook_path: /Workspace/Users/<utente>/Tesi/Notebook04-TrainingSet
+            source: WORKSPACE
+        - task_key: BenchmarkNotebook
+          depends_on:
+            - task_key: TrainingNotebook
+          notebook_task:
+            notebook_path: /Workspace/Users/<utente>/Tesi/Notebook05-Benchmark
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
+

@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    Job_Medallion_FeatureStore:
+      name: Job_Medallion_FeatureStore
+      tasks:
+        - task_key: BronzeStep
+          notebook_task:
+            notebook_path: /Workspace/Users/<utente>/Tesi/Notebook01-BronzeTable
+            source: WORKSPACE
+        - task_key: SilverStep
+          depends_on:
+            - task_key: BronzeStep
+          notebook_task:
+            notebook_path: /Workspace/Users/<utente>/Tesi/Notebook02-SilverTable
+            source: WORKSPACE
+        - task_key: GoldStep
+          depends_on:
+            - task_key: SilverStep
+          notebook_task:
+            notebook_path: /Workspace/Users/<utente>/Tesi/Notebook03-GoldFeatureTables
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
+
